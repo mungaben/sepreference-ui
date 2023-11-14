@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: npm install && npm build && npm start
+  # nginx:
+  #   image: nginx:1.17
+  #   volumes:
+  #     - .:/usr/share/nginx/html
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 3000:3000
+
+
+
+  #  "http://localhost:8091";
